@@ -10,9 +10,9 @@
     <header>
         <nav>
             <li><a href="{{ route('home') }}">home</a></li>
-            <li><a href="{ route('about') }}">about</a></li>
-            <li><a href="{ route('contacts') }}">contacts</a></li>
-            <li><a href="{ route('posts') }}">posts</a></li>
+            <li><a href="{{route('about') }}">about</a></li>
+            <li><a href="{{ route('contacts') }}">contacts</a></li>
+            <li><a href="{{ route('posts') }}">posts</a></li>
         </nav>
     </header>
     @yield('content')

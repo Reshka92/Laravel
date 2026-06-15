@@ -12,4 +12,9 @@ class PostController extends Controller
         $posts = Post::orderBy('id', 'desc')->get();
         return view('posts.index')->with('posts', $posts);
     }
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.show')->with('post', $post);
+    }
 }

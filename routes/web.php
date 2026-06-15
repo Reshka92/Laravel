@@ -14,3 +14,5 @@ Route::get('/contact', [BasicController::class, 'contact'])->name('contacts');
 Route::post('/contact', [BasicController::class, 'submit'])->name('contact.post');
 
 Route::get('/posts', [PostController::class, 'posts'])->name('posts');
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.one');
+
