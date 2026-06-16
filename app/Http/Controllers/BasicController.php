@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 use App\Models\Message;
+use Illuminate\Support\Facades\Mail; 
+use App\Mail\ContactMail;
 
 class BasicController extends Controller
 {
@@ -29,6 +31,8 @@ class BasicController extends Controller
     $message->subject = $request->input('subject');
     $message->text = $request->input('name');
     $message->save();
+
+    Mail::to('kirillmatveev119@gmail.com')->send(new ContactMail($message));
 
     return redirect()->route('home');
     }
